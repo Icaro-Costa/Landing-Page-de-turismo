@@ -1,0 +1,197 @@
+/* --- Reset Básico e Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Faz o padding não afetar o tamanho total */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Classe utilitária para centralizar conteúdo */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+/* --- Cabeçalho --- */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    border-bottom: 3px solid #007BFF; /* Destaque azul */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between; /* Título de um lado, nav do outro */
+    align-items: center;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+header nav ul {
+    list-style: none; /* Remove bolinhas da lista */
+}
+
+header nav ul li {
+    display: inline; /* Coloca os itens lado a lado */
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Efeito suave na cor */
+}
+
+header nav ul li a:hover {
+    color: #007BFF; /* Cor ao passar o mouse */
+}
+
+/* --- Seção Hero --- */
+#hero {
+    /* Dica: Adicione um 'background-image' aqui para um visual melhor */
+    background-color: #007BFF;
+    color: #fff;
+    height: 400px; /* Altura da seção */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+#hero h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* Botão Call-to-Action (CTA) */
+.cta-button {
+    display: inline-block;
+    background: #fff;
+    color: #007BFF;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* --- Seção de Destinos --- */
+#destinos {
+    padding: 50px 0;
+    text-align: center;
+}
+
+#destinos h3 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.destinos-grid {
+    display: grid;
+    /* Cria 3 colunas de tamanho igual */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px; /* Espaço entre os cards */
+}
+
+.destino-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+    overflow: hidden; /* Garante que a imagem não saia do card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destino-card:hover {
+    transform: translateY(-5px); /* Efeito de flutuar */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.destino-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Garante que a imagem cubra o espaço */
+}
+
+.card-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-content h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+/* --- Seção Sobre --- */
+#sobre {
+    background: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#sobre h3 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+#sobre p {
+    max-width: 800px;
+    margin: 0 auto; 
+}
+
+/* --- Rodapé --- */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    header h1 {
+        margin-bottom: 10px;
+    }
+
+    header nav ul {
+        padding-top: 10px;
+    }
+
+    #hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .destinos-grid {
+        /* Muda para 1 coluna em telas menores */
+        grid-template-columns: 1fr;
+    }
+}
